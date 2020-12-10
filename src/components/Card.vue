@@ -1,17 +1,15 @@
 <template>
-    <li>
-        <a :href="url">
-            <figure>
-                <div class="shader"></div>
-                <img :src="image_url" :alt="title">
-                <figcaption>
-                    <div class="rank">{{ rank }}</div>
-                    <div class="title">{{ title }}</div>
+    <a :href="url">
+        <figure>
+            <div class="shader"></div>
+            <img :src="image_url" :alt="title">
+            <figcaption>
+                <div class="rank">{{ rank }}</div>
+                <div class="title">{{ title }}</div>
 
-                </figcaption>
-            </figure>
-        </a>
-    </li>
+            </figcaption>
+        </figure>
+    </a>
 </template>
 
 <script>
@@ -34,15 +32,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-li {
-    display: block;
-}
-
 a {
     display: block;
     position: relative;
     height: 100%;
-    width: 100%;
 
     &:hover {
         figcaption {

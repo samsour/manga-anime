@@ -12,7 +12,7 @@ export default {
     data: () => ({
         links: [
             {
-                label: "Info",
+                label: "Home",
                 url: "/"
             },
             {
@@ -35,7 +35,7 @@ nav {
 
 ul {
     display: flex;
-    margin: 0;
+    margin: 0 auto;
     list-style-type: none;
     justify-content: center;
 }

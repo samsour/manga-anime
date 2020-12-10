@@ -1,48 +1,15 @@
 <template>
-<div>
-    <div v-if="activeStep == 1">
-        <p>{{ step1.pleaseEnterYourName }}</p>
-        <input v-model="name" />
-        <button @click="saveName">Weiter</button>
-        <p v-if="step1.showNameError" class="error">{{ step1.invalidName }}</p>
-    </div>
-
-    <div v-if="activeStep == 2">
-        <p>Hallo {{ name }}!</p>
-        <p>Was suchst du heute?</p>
-        <Navigation />    
-    </div>
-</div>
+<Overview :apiUrl="'https://api.jikan.moe/v3/search/anime?q=naruto&limit=5'" :itemsKey="'results'" />
+<Overview :apiUrl="'https://api.jikan.moe/v3/search/anime?q=sword&limit=5'" :itemsKey="'results'" />
 </template>
 
 <script>
-import Navigation from '../components/Navigation.vue';
+import Overview from '../components/Overview.vue';
 
 export default {
     name: "Home",
     components: {
-        Navigation
-    },
-    data: () => ({
-        step1: {
-            pleaseEnterYourName: "Wie heißt du?",
-            invalidName: "Bitte gib einen Namen an.",
-            showNameError: false,
-        },
-        activeStep: 1,
-        name: "",
-    }),
-    computed: {
-
-    },
-    methods: {
-        saveName() {
-            if (this.name.length > 0) {
-                this.activeStep++;
-            } else {
-                this.showNameError = true;
-            }
-        }
+        Overview
     }
 };
 </script>
